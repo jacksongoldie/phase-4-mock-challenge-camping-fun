@@ -2,11 +2,11 @@ class CampersController < ApplicationController
 
     def index
         campers = Camper.all 
-        render json: campers, each_serializer: CamperActivitySerializer
+        render json: campers
     end
 
     def show
-        render json: camper
+        render json: camper, serializer: CamperActivitySerializer
     end
 
     def create
